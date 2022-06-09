@@ -18,19 +18,19 @@ echo "User: admin"
 echo "Password: $(kubectl get secret influxdb --namespace default -o jsonpath="{.data.admin-user-password}" | base64 --decode)"
 echo "Token: $(kubectl get secret influxdb --namespace default -o jsonpath="{.data.admin-user-token}" | base64 --decode)"
 
-echo "------------------- install grafana --------------------"
-helm install grafana bitnami/grafana
+# echo "------------------- install grafana --------------------"
+# helm install grafana bitnami/grafana
 
 echo "------------------- install demo service --------------------"
-kubectl apply -f service/demo/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/ante-involutum/demo/main/deployment.yaml
 
-echo "------------------- install jmeter cluster --------------------"
-kubectl apply -f jmeter/deployment.yaml
+# echo "------------------- install jmeter cluster --------------------"
+# kubectl apply -f https://raw.githubusercontent.com/ante-involutum/jmeter/main/deployment.yaml
 
 echo "------------------- install files service --------------------"
-kubectl apply -f service/files/deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/ante-involutum/files/main/deployment.yaml
 
-echo "------------------- install controller service --------------------"
-kubectl apply -f service/controller/deployment.yaml
+echo "------------------- install tink service --------------------"
+kubectl apply -f https://raw.githubusercontent.com/ante-involutum/tink/main/deployment.yaml
 
 echo "------------------- install  done --------------------"
