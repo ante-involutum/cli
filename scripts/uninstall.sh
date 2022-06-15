@@ -26,6 +26,9 @@ helm uninstall svc
 echo "------------------- uninstall RBAC --------------------"
 kubectl delete -f deployment/RBAC.yaml
 
+echo "------------------- uninstall ingress --------------------"
+helm uninstall tink
+
 # echo "------------------- uninstall pvc --------------------"
 # kubectl delete -f deployment/nfs-pvc.yaml
 

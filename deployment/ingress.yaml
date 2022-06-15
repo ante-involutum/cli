@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tink
+  namespace: default
+spec:
+  ingressClassName: tink-nginx
+  rules:
+    - host: tink.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: console
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
+          - backend:
+              service:
+                name: svc-files
+                port:
+                  number: 8004
+            path: /files
+            pathType: Prefix
+          - backend:
+              service:
+                name: svc-tink
+                port:
+                  number: 8003
+            path: /tink
+            pathType: Prefix

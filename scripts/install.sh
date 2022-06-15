@@ -36,4 +36,9 @@ kubectl apply -f https://raw.githubusercontent.com/ante-involutum/tink/main/depl
 echo "------------------- install console service --------------------"
 kubectl apply -f https://raw.githubusercontent.com/ante-involutum/console/main/deployment.yaml
 
+echo "------------------- install ingress --------------------"
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install tink bitnami/nginx-ingress-controller -f deployment/nginx-ingress-controller.yaml
+kubectl apply -f deployment/ingress.yaml
+
 echo "------------------- install  done --------------------"
