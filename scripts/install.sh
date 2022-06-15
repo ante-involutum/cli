@@ -33,4 +33,7 @@ kubectl apply -f https://raw.githubusercontent.com/ante-involutum/files/main/dep
 echo "------------------- install tink service --------------------"
 kubectl apply -f https://raw.githubusercontent.com/ante-involutum/tink/main/deployment.yaml
 
+echo "------------------- install console service --------------------"
+kubectl apply -f https://raw.githubusercontent.com/ante-involutum/console/main/deployment.yaml
+
 echo "------------------- install  done --------------------"

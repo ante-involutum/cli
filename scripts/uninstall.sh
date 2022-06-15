@@ -17,6 +17,9 @@ kubectl delete -f https://raw.githubusercontent.com/ante-involutum/files/main/de
 echo "------------------- uninstall tink service --------------------"
 kubectl delete -f https://raw.githubusercontent.com/ante-involutum/tink/main/deployment.yaml
 
+echo "------------------- uninstall console service --------------------"
+kubectl delete -f https://raw.githubusercontent.com/ante-involutum/console/main/deployment.yaml
+
 echo "------------------- uninstall nfs --------------------"
 helm uninstall svc
 
