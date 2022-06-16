@@ -30,3 +30,10 @@ spec:
                   number: 8003
             path: /tink
             pathType: Prefix
+          - backend:
+              service:
+                name: svc-analysis
+                port:
+                  number: 8005
+            path: /analysis
+            pathType: Prefix
