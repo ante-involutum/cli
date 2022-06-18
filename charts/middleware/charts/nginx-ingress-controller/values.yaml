@@ -113,7 +113,7 @@ watchIngressWithoutClass: false
 ## @param ingressClassResource.parameters Optional parameters for the controller
 ##
 ingressClassResource:
-  name: nginx
+  name: tink-nginx
   enabled: true
   default: false
   controllerClass: "k8s.io/ingress-nginx"
@@ -755,7 +755,7 @@ defaultBackend:
 service:
   ## @param service.type Kubernetes Service type for Controller
   ##
-  type: LoadBalancer
+  type: NodePort
   ## @param service.ports [object] Service ports
   ##
   ports:
