@@ -48,7 +48,8 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "local-storage"
+  # storageClass: "local-storage"
+  storageClass: "local"
 
   accessMode: ReadWriteOnce
   size: 10Gi
@@ -106,8 +107,6 @@ resources:
   # requests:
   #  cpu: 100m
   #  memory: 128Mi
-
-nodeSelector: { kubernetes.io/hostname: worker-p003 }
 
 tolerations: []
 
