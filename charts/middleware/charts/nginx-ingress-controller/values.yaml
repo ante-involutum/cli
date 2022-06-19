@@ -770,8 +770,8 @@ service:
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
   nodePorts:
-    http: ""
-    https: ""
+    http: "31695"
+    https: "32674"
     tcp: {}
     udp: {}
   ## @param service.annotations Annotations for controller service

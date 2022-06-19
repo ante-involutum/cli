@@ -28,10 +28,16 @@ jobs:
         with:
           config: .github/workflows/kind/kind.yaml
 
-      - name: Install
+      - name: add chartrepo
         run: |
-          sh scripts/install.sh 
+          helm repo add tink https://ante-involutum.github.io/chartrepo/
+          helm repo update tink
 
-      - name: Uninstall
+      - name: install
         run: |
-          sh scripts/uninstall.sh 
+          helm install middleware tink/middleware
+          helm install console tink/console
+          helm install files tink/files
+          helm install tink tink/tink
+          helm install analysis tink/analysis
+          helm install demo tink/demo
